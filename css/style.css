@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=UnifrakturMaguntia&display=swap');
+
+:root {
+  /* Cores */
+  --cor-bg: #fdfcf7;
+  --cor-header: #1c1c1c;
+  --cor-footer: #1c1c1c;
+  --cor-texto: #2e2e2e;
+  --cor-link: #2e2e2e;
+  --cor-link-ativo: #ce0000;
+  --cor-card-bg: #ffffff;
+  --cor-icon-ativo: #ce0000;
+
+  /* Fontes */
+  --fonte-titulo: 'UnifrakturMaguntia', cursive;
+  --fonte-texto: 'EB Garamond', serif;
+  --tamanho-base: 17px;
+
+  /* Espaçamento */
+  --espacamento: 1.5rem;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: var(--tamanho-base);
+  background: var(--cor-bg);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: var(--cor-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: white;
+  padding: 0.5rem var(--espacamento) 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  letter-spacing: 2px;
+  font-size: 2rem;
+  margin: 0;
+}
+
+header img {
+  max-width: 50px;
+  height: auto;
+}
+
+/* Nav */
+nav {
+  background: transparent;
+  color: var(--cor-link);
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav ul li a {
+  color: var(--cor-link);
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--cor-link-ativo);
+  color: white;
+}
+
+/* Main */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 150px auto 100px auto;
+  width: 100%;
+  max-width: 900px;
+  padding: var(--espacamento);
+  position: relative;
+  z-index: 1;
+  gap: 1rem;
+}
+
+/* Imagens laterais */
+main .img1,
+main .img2 {
+  position: fixed;
+  bottom: 60px;
+  z-index: 0;
+}
+
+main .img1 {
+  left: 10px;
+}
+
+main .img2 {
+  right: 10px;
+}
+
+main .img1 img,
+main .img2 img {
+  max-width: 300px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Conteúdo central */
+main > div:nth-child(2) {
+  flex: 1;
+  z-index: 1;
+}
+
+main section {
+  display: none;
+  padding: var(--espacamento);
+  background: var(--cor-card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+main section.active {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+main section h1 {
+  font-family: var(--fonte-titulo);
+  text-align: center;
+  margin-bottom: var(--espacamento);
+  font-size: 1.8rem;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+main section h1::before,
+main section h1::after {
+  content: "✧";
+  font-size: 1rem;
+  color: var(--cor-link-ativo);
+  margin: 0 0.4rem;
+}
+
+/* Projetos */
+#projetos {
+  text-align: center;
+  padding: 50px 0;
+}
+
+#projetos h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.social-icons a {
+  display: inline-block;
+  font-size: 3em;
+  margin: 0 15px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  color: var(--cor-icon-ativo);
+}
+
+/* Contato */
+#contato {
+  padding: 15px 10px;
+  background: #111;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+#contato h1 {
+  font-family: var(--fonte-titulo); 
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e8d2b0; /* tom suave */
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #222;
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #a57d69; 
+  outline: none;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #a57d69;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ce0000;
+}
+
+
+/* Mensagem Copiado */
+#copied-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#copied-message.show {
+  opacity: 1;
+}
+
+/* Footer */
+footer {
+  background: var(--cor-footer);
+  color: white;
+  text-align: center;
+  padding: var(--espacamento);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Botão hambúrguer */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 110;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header img {
+    max-width: 35px;
+  }
+
+  /* Menu hamburguer escondido */
+  nav {
+    position: fixed;
+    top: 70px; /* abaixo do header */
+    left: 0;
+    width: 100%;
+    background: var(--cor-header);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+  }
+
+  nav.ativo {
+    transform: translateY(0);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+  }
+
+  /* Exibir botão hamburguer */
+  .menu-toggle {
+    display: block;
+  }
+
+  main {
+    margin: 120px auto 100px auto; /* sobe o conteúdo */
+    padding: 1rem;
+    max-width: 95%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .img1 img,
+  main .img2 img {
+    max-width: 80px;
+    opacity: 0.5;
+  }
+
+  main section {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
