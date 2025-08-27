@@ -48,7 +48,7 @@ header {
   color: white;
   padding: 0.5rem var(--espacamento) 1rem;
   position: fixed;
-  top: 0;
+  top: .5rem;
   left: 0;
   width: 100%;
   z-index: 100;
@@ -323,7 +323,7 @@ footer {
   cursor: pointer;
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: .5rem;
   z-index: 110;
 }
 
