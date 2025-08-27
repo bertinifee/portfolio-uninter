@@ -216,7 +216,7 @@ main section h1::after {
   font-family: var(--fonte-titulo); 
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #e8d2b0; /* tom suave */
+  color: #e8d2b0; 
 }
 
 form {
@@ -340,7 +340,7 @@ footer {
   /* Menu hamburguer escondido */
   nav {
     position: fixed;
-    top: 70px; /* abaixo do header */
+    top: 70px; 
     left: 0;
     width: 100%;
     background: var(--cor-header);
@@ -376,7 +376,7 @@ footer {
   }
 
   main {
-    margin: 120px auto 100px auto; /* sobe o conteúdo */
+    margin: 120px auto 100px auto; 
     padding: 1rem;
     max-width: 95%;
     flex-direction: column;
