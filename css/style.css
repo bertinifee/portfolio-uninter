@@ -48,7 +48,7 @@ header {
   color: white;
   padding: 0.5rem var(--espacamento) 1rem;
   position: fixed;
-  top: .5rem;
+  
   left: 0;
   width: 100%;
   z-index: 100;
@@ -214,7 +214,7 @@ main section h1::after {
 
 #contato h1 {
   font-family: var(--fonte-titulo); 
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
   color: #e8d2b0; 
 }
@@ -254,7 +254,7 @@ input:focus, textarea:focus {
 
 button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 8px 20px;
   background: #a57d69;
   color: #111;
   font-weight: bold;
